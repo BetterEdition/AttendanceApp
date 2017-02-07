@@ -1,56 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <GridPane prefHeight="376.0" prefWidth="530.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="317.0" minHeight="10.0" prefHeight="170.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label alignment="TOP_CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" prefWidth="67.0" text="Monday" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold Italic" size="17.0" />
-               </font>
-            </Label>
-            <Label text="Tuesday" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold Italic" size="17.0" />
-               </font>
-            </Label>
-            <Label text="Wednesday" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label text="Thursday" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold Italic" size="17.0" />
-               </font>
-            </Label>
-            <Label text="Friday" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold Italic" size="17.0" />
-               </font>
-            </Label>
-         </children>
-      </GridPane>
-   </top>
-</BorderPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.MainScheduleController">
+   <children>
+      <SplitPane dividerPositions="0.35667396061269147" layoutX="99.0" layoutY="259.0" orientation="VERTICAL" prefHeight="459.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="22.0" layoutY="14.0" text="Student Account" />
+                  <Label layoutX="16.0" layoutY="56.0" text="Name:" />
+                  <Label layoutX="22.0" layoutY="92.0" text="Id:" />
+                  <Label layoutX="18.0" layoutY="127.0" text="Email:" />
+                  <TextField fx:id="textFieldName" layoutX="64.0" layoutY="51.0" />
+                  <TextField fx:id="textFieldID" layoutX="64.0" layoutY="87.0" />
+                  <TextField fx:id="textFieldEmail" layoutX="64.0" layoutY="122.0" />
+                  <Button layoutX="497.0" layoutY="19.0" mnemonicParsing="false" onAction="#logOutBtnAction" prefHeight="27.0" prefWidth="78.0" text="Log out">
+                     <font>
+                        <Font name="Malayalam MN" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="598.0">
+               <children>
+                  <TableView fx:id="scheduleTableView" layoutX="41.0" layoutY="52.0" prefHeight="238.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+                    <columns>
+                      <TableColumn prefWidth="98.0" />
+                      <TableColumn prefWidth="100.0" text="Monday" />
+                        <TableColumn prefWidth="98.0" text="Tuesday" />
+                        <TableColumn prefWidth="102.0" text="Wednesday" />
+                        <TableColumn prefWidth="100.0" text="Thursday" />
+                        <TableColumn prefWidth="100.0" text="Friday" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="383.0" layoutY="22.0" text="Date:" />
+                  <TextField fx:id="textFieldDate" layoutX="424.0" layoutY="17.0" />
+                  <Button fx:id="previousBtn" layoutX="36.0" layoutY="17.0" mnemonicParsing="false" onAction="#previousBtn" prefHeight="27.0" prefWidth="37.0" text="&lt;" />
+                  <Button fx:id="nextBtn" layoutX="151.0" layoutY="17.0" mnemonicParsing="false" onAction="#nextBtn" prefHeight="27.0" prefWidth="37.0" text="&gt;" />
+                  <Button fx:id="weekBtn" layoutX="80.0" layoutY="17.0" mnemonicParsing="false" onAction="#weekBtnAction" text="Week 5" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -47,7 +47,7 @@ public class LogInController implements Initializable {
         
         String username = studentId.getText();
         String pass = passwordField.getText();
-        
+        // test
         if(username.equals("123456")&& pass.equals("robiesun"));
         {
              Stage stage = null;

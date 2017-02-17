@@ -22,6 +22,8 @@ public class MainClass extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/LogInView.fxml"));
         
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("Main/myStyleSheet.css");
+     
         stage.setTitle("Log-in");
         
         stage.setScene(scene);

@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <GridPane prefHeight="376.0" prefWidth="530.0" BorderPane.alignment="CENTER">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.MainScheduleController">
+   <children>
+      <SplitPane layoutX="99.0" layoutY="259.0" orientation="VERTICAL" prefHeight="183.0" prefWidth="600.0" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="129.0" prefWidth="598.0">
+               <children>
+                  <Label layoutX="22.0" layoutY="14.0" text="Student Account" />
+                  <Label layoutX="16.0" layoutY="56.0" text="Name:" />
+                  <Label layoutX="22.0" layoutY="92.0" text="Id:" />
+                  <Label layoutX="18.0" layoutY="127.0" text="Email:" />
+                  <TextField fx:id="textFieldName" layoutX="64.0" layoutY="51.0" prefHeight="27.0" prefWidth="232.0" />
+                  <TextField fx:id="textFieldID" layoutX="64.0" layoutY="87.0" prefHeight="27.0" prefWidth="232.0" />
+                  <TextField fx:id="textFieldEmail" layoutX="64.0" layoutY="122.0" prefHeight="27.0" prefWidth="232.0" />
+                  <Button fx:id="logOutBtn" layoutX="544.0" layoutY="19.0" mnemonicParsing="false" onAction="#logOutBtnAction" prefHeight="27.0" prefWidth="78.0" text="Log out">
+                     <font>
+                        <Font name="Malayalam MN" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="summaryBtn" layoutX="451.0" layoutY="21.0" mnemonicParsing="false" onAction="#summaryBtnAction" text="Summary">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <GridPane layoutX="27.0" layoutY="273.0" prefHeight="143.0" prefWidth="610.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -20,37 +48,52 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="317.0" minHeight="10.0" prefHeight="170.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="TOP_CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" prefWidth="67.0" text="Monday" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold Italic" size="17.0" />
-               </font>
+            <Label fx:id="labelMonday" alignment="TOP_LEFT" contentDisplay="CENTER" text="Monday" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
             </Label>
-            <Label text="Tuesday" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold Italic" size="17.0" />
-               </font>
+            <Label fx:id="labelTuesday" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="135.0" layoutY="17.0" text="Tuesday" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
             </Label>
-            <Label text="Wednesday" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold" size="17.0" />
-               </font>
+            <Label fx:id="labelWednesday" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="235.0" layoutY="17.0" text="Wednesday" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
             </Label>
-            <Label text="Thursday" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold Italic" size="17.0" />
-               </font>
+            <Label fx:id="labelThursday" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="335.0" layoutY="17.0" text="Thursday" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
             </Label>
-            <Label text="Friday" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-               <font>
-                  <Font name="Arial Narrow Bold Italic" size="17.0" />
-               </font>
+            <Label fx:id="labelFriday" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="435.0" layoutY="17.0" text="Friday" GridPane.columnIndex="5">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="labelSubjects" text="Subjects:" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="labelTime" layoutX="30.0" layoutY="47.0" text="Time:" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
             </Label>
          </children>
       </GridPane>
-   </top>
-</BorderPane>
+      <Button fx:id="previousBtn" layoutX="56.0" layoutY="196.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" text="&lt;" />
+      <Button fx:id="nextBtn" layoutX="161.0" layoutY="196.0" mnemonicParsing="false" text="&gt;" />
+      <TextField fx:id="weekTextField" layoutX="83.0" layoutY="196.0" prefHeight="27.0" prefWidth="78.0" text="Week 5" />
+      <Label layoutX="412.0" layoutY="201.0" prefHeight="17.0" prefWidth="40.0" text="Date:" />
+      <TextField fx:id="dateTextField" layoutX="452.0" layoutY="196.0" />
+   </children>
+</AnchorPane>

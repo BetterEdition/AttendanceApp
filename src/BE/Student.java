@@ -9,16 +9,21 @@ package BE;
  * 
  * @author robiesun
  */
-public class Student {
+public class Student extends Person{
     
-    private String name;
-    private int Id;
-    private String email; // note for robie: ask teacher if string is appropriate for email(@ , .)?
-    private String password;
-
-    public String getName() {
-        return name;
+   
+  
+    private String password = name;
+   
+    
+    public Student(String name)
+    {
+        super(name);
+        this.password = password;
+    
     }
+
+  
 
     public String getPassword() {
         return password;
@@ -28,24 +33,5 @@ public class Student {
         this.password = password;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int Id) {
-        this.Id = Id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
     
 }

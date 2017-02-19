@@ -5,6 +5,7 @@
  */
 package GUI.Controller;
 
+import BE.Student;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -22,7 +23,7 @@ import javafx.scene.control.TreeTableView;
 public class TeacherMainViewController implements Initializable {
 
     @FXML
-    private TableView<?> studentTableView;
+    private TableView<Student> studentTableView;
     @FXML
     private TableView<?> studentAbsenceTableVIew;
     @FXML
@@ -32,7 +33,7 @@ public class TeacherMainViewController implements Initializable {
     @FXML
     private TextField classTextField;
     @FXML
-    private TextField dateTextField;
+    private TextField  dateTextField;
     @FXML
     private TreeTableView<?> ScheduleTableView;
     @FXML

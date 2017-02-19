@@ -27,6 +27,8 @@ import javafx.stage.Stage;
  * @author robiesun
  */
 public class LogInController implements Initializable {
+    private String StudentViewPath = "/GUI/View/MainSchedule.fxml";
+    private String TeacherViewPath = "/GUI/View/TeacherMainView.fxml";
 
     @FXML
     private TextField studentId;
@@ -35,6 +37,8 @@ public class LogInController implements Initializable {
     private Button logIn;
     @FXML
     private PasswordField passwordField;
+    String username = studentId.getText();
+    String pass = passwordField.getText();
 
     
     @Override
@@ -42,30 +46,34 @@ public class LogInController implements Initializable {
         // TODO
     }    
 
-    @FXML
+   @FXML
     private void handleButton(ActionEvent event) {
-        
         String username = studentId.getText();
-        String pass = passwordField.getText();
-        // test
-        if(username.equals("123456")&& pass.equals("robiesun"));
+    String pass = passwordField.getText();
+        
+    
+    if (username.equals("123456") && pass.equals("student"))
+        logInAs(StudentViewPath);
+    if (username.equals("123456") && pass.equals("teacher"))
+        logInAs(TeacherViewPath); 
+        
+        
+    }
+public void logInAs(String path)
         {
-             Stage stage = null;
-            Parent root = null;
 
-            if (event.getSource() == logIn)
-            {
+            Stage stage = null;
+            Parent root = null;
+           {
 
                 //get reference to the button's stage  
                 stage = (Stage) logIn.getScene().getWindow();
 
                 //load up OTHER FXML document
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/GUI/View/MainSchedule.fxml"));
-                try
-                {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(""+path));
+                try {
                     root = fxmlLoader.load();
-                } catch (IOException ex)
-                {
+                } catch (IOException ex) {
                     Logger.getLogger(LogInController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -73,9 +81,8 @@ public class LogInController implements Initializable {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+
+            }
+
         }
-      
-    }
-    
-}
 }

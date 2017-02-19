@@ -27,26 +27,26 @@ import javafx.stage.Stage;
  * @author robiesun
  */
 public class LogInController implements Initializable {
+
     private String StudentViewPath = "/GUI/View/MainSchedule.fxml";
     private String TeacherViewPath = "/GUI/View/TeacherMainView.fxml";
-
     @FXML
     private TextField studentId;
-    
+
     @FXML
     private Button logIn;
     @FXML
     private PasswordField passwordField;
-    String username = studentId.getText();
-    String pass = passwordField.getText();
-
     
+    
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
-   @FXML
+    @FXML
     private void handleButton(ActionEvent event) {
         String username = studentId.getText();
     String pass = passwordField.getText();
@@ -85,4 +85,5 @@ public void logInAs(String path)
             }
 
         }
+
 }

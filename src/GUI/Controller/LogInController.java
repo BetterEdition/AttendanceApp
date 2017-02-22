@@ -5,6 +5,7 @@
  */
 package GUI.Controller;
 
+import BLL.PersonManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -26,7 +28,8 @@ import javafx.stage.Stage;
  *
  * @author robiesun
  */
-public class LogInController implements Initializable {
+public class LogInController implements Initializable
+{
 
     private String StudentViewPath = "/GUI/View/MainSchedule.fxml";
     private String TeacherViewPath = "/GUI/View/TeacherMainView.fxml";
@@ -37,53 +40,77 @@ public class LogInController implements Initializable {
     private Button logIn;
     @FXML
     private PasswordField passwordField;
-    
-    
-
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
         // TODO
     }
 
     @FXML
-    private void handleButton(ActionEvent event) {
+    private void handleButton(ActionEvent event)
+    {
         String username = studentId.getText();
-    String pass = passwordField.getText();
-        
-    
-    if (username.equals("123456") && pass.equals("student"))
-        logInAs(StudentViewPath);
-    if (username.equals("123456") && pass.equals("teacher"))
-        logInAs(TeacherViewPath); 
-        
-        
+        String pass = passwordField.getText();
+
+        if (username.equals("123456") && pass.equals("student"))
+        {
+            logInAs(StudentViewPath);
+        }
+        if (username.equals("123456") && pass.equals("teacher"))
+        {
+            logInAs(TeacherViewPath);
+        }
+
     }
-public void logInAs(String path)
+
+    public void logInAs(String path)
+    {
+
+        Stage stage = null;
+        Parent root = null;
         {
 
-            Stage stage = null;
-            Parent root = null;
-           {
+            //get reference to the button's stage  
+            stage = (Stage) logIn.getScene().getWindow();
 
-                //get reference to the button's stage  
-                stage = (Stage) logIn.getScene().getWindow();
-
-                //load up OTHER FXML document
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(""+path));
-                try {
-                    root = fxmlLoader.load();
-                } catch (IOException ex) {
-                    Logger.getLogger(LogInController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                //create a new scene with root and set the stage
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-
+            //load up OTHER FXML document
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("" + path));
+            try
+            {
+                root = fxmlLoader.load();
+            } catch (IOException ex)
+            {
+                Logger.getLogger(LogInController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
+            //create a new scene with root and set the stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
         }
+
+    }
+
+    @FXML
+    private void EnterLogin(KeyEvent event)
+    {
+
+        if (event.getCode().toString().equals("ENTER"))
+        {
+            String username = studentId.getText();
+            String pass = passwordField.getText();
+
+            if (username.equals("123456") && pass.equals("student"))
+            {
+                logInAs(StudentViewPath);
+            }
+            if (username.equals("123456") && pass.equals("teacher"))
+            {
+                logInAs(TeacherViewPath);
+            }
+        }
+    }
 
 }

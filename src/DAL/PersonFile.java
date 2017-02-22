@@ -23,8 +23,7 @@ public class PersonFile {
         PersonManager personManager = PersonManager.getInstance();
         
         Student name = new Student("Robie");
-       
-      
+        
         personManager.addPerson(name);
     }
     

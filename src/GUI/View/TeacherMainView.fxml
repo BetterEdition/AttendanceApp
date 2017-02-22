@@ -9,7 +9,7 @@
 <?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="641.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.View.TeacherMainViewController">
+<AnchorPane id="AnchorPane" prefHeight="641.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.TeacherMainViewController">
    <children>
       <TableView fx:id="studentTableView" layoutX="12.0" layoutY="231.0" prefHeight="406.0" prefWidth="263.0">
         <columns>

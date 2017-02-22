@@ -7,11 +7,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="342.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.LogInController">
+<AnchorPane id="AnchorPane" prefHeight="342.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.LogInController">
    <children>
-      <TextField fx:id="studentId" layoutX="91.0" layoutY="165.0" promptText="student's id no" />
-      <PasswordField fx:id="passwordField" layoutX="91.0" layoutY="214.0" promptText="password" />
-      <Button fx:id="logIn" layoutX="146.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleButton" style="-fx-background-color: #63b4d7;" text="Log in" />
+      <TextField fx:id="studentId" layoutX="91.0" layoutY="165.0" onKeyPressed="#EnterLogin" promptText="student's id no" />
+      <PasswordField fx:id="passwordField" layoutX="91.0" layoutY="214.0" onKeyPressed="#EnterLogin" promptText="password" />
+      <Button fx:id="logIn" layoutX="146.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleButton" onKeyPressed="#EnterLogin" style="-fx-background-color: #63b4d7;" text="Log-in" />
       <ImageView fitHeight="130.0" fitWidth="186.0" layoutX="109.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/Unknown.jpg" />

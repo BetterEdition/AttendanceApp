@@ -28,12 +28,8 @@ import javafx.stage.Stage;
  */
 public class MainScheduleController implements Initializable {
 
-    @FXML
-    private TextField textFieldName;
-    @FXML
-    private TextField textFieldID;
-    @FXML
-    private TextField textFieldEmail;
+  
+ 
     @FXML
     private Button summaryBtn;
     @FXML
@@ -60,14 +56,20 @@ public class MainScheduleController implements Initializable {
     private TextField dateTextField;
     @FXML
     private Button logOutBtn;
+    @FXML
+    private Label LblName;
+    @FXML
+    private Label LblId;
+    @FXML
+    private Label lblEmail;
   
 
-    /**
-     * Initializes the controller class.
-     */
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        LblName.setText("Robie");
+        LblId.setText("1");
+        lblEmail.setText("Robie@hotmail.com");
         
     }    
 
@@ -97,6 +99,7 @@ public class MainScheduleController implements Initializable {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                
         }
           
     }

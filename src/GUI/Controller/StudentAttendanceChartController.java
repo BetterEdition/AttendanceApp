@@ -15,6 +15,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -27,14 +28,6 @@ public class StudentAttendanceChartController implements Initializable {
 
     @FXML
     private AnchorPane topPane;
-    @FXML
-    private TextField textFieldStudent;
-    @FXML
-    private TextField textFieldTotalAbs;
-    @FXML
-    private TextField textFieldMostAbsOn;
-    @FXML
-    private TextField textFieldAbsSum;
     @FXML
     private AnchorPane bottomPane;
     @FXML
@@ -50,6 +43,14 @@ public class StudentAttendanceChartController implements Initializable {
     private final StackedBarChart<String, Number> attendanceChart = new StackedBarChart<>(xAxis,yAxis);
     private final XYChart.Series<String, Number> present = new XYChart.Series<>();
     private final XYChart.Series<String, Number> absent = new XYChart.Series<>();
+    @FXML
+    private Label LblMostAbsOn;
+    @FXML
+    private Label LblAbsSum;
+    @FXML
+    private Label LblTotalAbs;
+    @FXML
+    private Label LblStudent;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
